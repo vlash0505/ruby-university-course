@@ -1,14 +1,14 @@
 
 def calculate_area(coordinates)
-  $sum = 0
+  sum = 0
   (0..coordinates.size - 1).each { |i|
     if i == coordinates.size - 1
-      $sum += (coordinates[i][0] + coordinates[0][0]) * (coordinates[0][1] - coordinates[i][1])
+      sum += (coordinates[i][0] + coordinates[0][0]) * (coordinates[0][1] - coordinates[i][1])
     else
-      $sum += (coordinates[i][0] + coordinates[i + 1][0]) * (coordinates[i + 1][1] - coordinates[i][1])
+      sum += (coordinates[i][0] + coordinates[i + 1][0]) * (coordinates[i + 1][1] - coordinates[i][1])
     end
   }
-  $sum = $sum.abs/2
+  sum = sum.abs/2
 end
 
 coordinates = [[34,145], [37,105], [41,66], [70,56], [99,49],
