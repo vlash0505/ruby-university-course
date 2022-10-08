@@ -8,7 +8,7 @@ def calculate_area(coordinates)
       sum += (coordinates[i][0] + coordinates[i + 1][0]) * (coordinates[i + 1][1] - coordinates[i][1])
     end
   }
-  sum = sum.abs/2
+   sum.abs/2
 end
 
 coordinates = [[34,145], [37,105], [41,66], [70,56], [99,49],

@@ -23,9 +23,9 @@ class TestIntegration < Test::Unit::TestCase
     assert_equal((@part_a.prm($a1, $b1, 100000.0) {|x| f2(x)}).round(2), 0.39)
   end
 
-  def test_rtp
+  def test_trp
     assert_equal((@part_a.trp($a1, $b1, 100000.0) {|x| f1(x)}).round(2), 0.57)
-    assert_equal((@part_a.prm($a1, $b1, 100000.0) {|x| f2(x)}).round(2), 0.39)
+    assert_equal((@part_a.trp($a1, $b1, 100000.0) {|x| f2(x)}).round(2), 0.39)
   end
 
   def test_equals_prm_rtp

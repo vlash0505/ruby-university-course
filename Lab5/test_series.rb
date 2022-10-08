@@ -4,9 +4,6 @@ require_relative 'part_b'
 
 class TestSeries < Test::Unit::TestCase
 
-  $a = 0.1
-  $b = 0.8
-
   def setup
     @part_b = PartB.new
   end
