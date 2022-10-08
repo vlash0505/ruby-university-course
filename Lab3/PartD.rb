@@ -43,7 +43,12 @@ def third_sum
   sum
 end
 
+def compare(sum)
+  sum.round(2) == (Math::PI / 4).round(2)
+end
+
 puts first_sum
 puts second_sum
 puts Math::PI / 4
+puts compare(second_sum)
 puts third_sum
