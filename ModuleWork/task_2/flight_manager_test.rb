@@ -45,8 +45,8 @@ class FlightManagerTest < Test::Unit::TestCase
   end
 
   def test_group_by_destination
-    assert_equal(@flight_manager.group_by_destination.values_at(PlaneTypes::STANDARD).at(0), [1, 2, 5, 6, 7, 8, 9])
-    assert_equal(@flight_manager.group_by_destination.values_at(PlaneTypes::PRIVATE).at(0),  [3])
-    assert_equal(@flight_manager.group_by_destination.values_at(PlaneTypes::URGENT).at(0),   [4, 10])
+    assert_equal(@flight_manager.group_by_plane_type.values_at(PlaneTypes::STANDARD).at(0), [1, 2, 5, 6, 7, 8, 9])
+    assert_equal(@flight_manager.group_by_plane_type.values_at(PlaneTypes::PRIVATE).at(0),  [3])
+    assert_equal(@flight_manager.group_by_plane_type.values_at(PlaneTypes::URGENT).at(0),   [4, 10])
   end
 end

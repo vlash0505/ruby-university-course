@@ -30,7 +30,7 @@ class FlightManager
     count_airlines
   end
 
-  def group_by_destination
+  def group_by_plane_type
     flights_group = Hash.new { |hash, key| hash[key] = [] }
 
     @airlines.each do |entry|
