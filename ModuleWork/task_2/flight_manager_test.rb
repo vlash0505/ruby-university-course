@@ -44,7 +44,7 @@ class FlightManagerTest < Test::Unit::TestCase
     assert_equal(@flight_manager.count_standard_by_day( WeekDays::SUNDAY),   0)
   end
 
-  def test_group_by_destination
+  def test_group_by_type
     assert_equal(@flight_manager.group_by_plane_type.values_at(PlaneTypes::STANDARD).at(0), [1, 2, 5, 6, 7, 8, 9])
     assert_equal(@flight_manager.group_by_plane_type.values_at(PlaneTypes::PRIVATE).at(0),  [3])
     assert_equal(@flight_manager.group_by_plane_type.values_at(PlaneTypes::URGENT).at(0),   [4, 10])
