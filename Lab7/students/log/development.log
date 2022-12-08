@@ -760,3 +760,98 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 9ms (Views: 7.0ms | Allocations: 2916)
 
 
+  [1m[35m (22.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStudents (20221208005242)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "phone" varchar, "studied_language" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221208005242"]]
+  [1m[36mTRANSACTION (14.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-08 00:55:00.835506"], ["updated_at", "2022-12-08 00:55:00.835506"]]
+  [1m[36mTRANSACTION (15.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-12-08 02:56:33 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 307)
+  Rendered home/_header.html.erb (Duration: 1.1ms | Allocations: 404)
+  Rendered layout layouts/application.html.erb (Duration: 192.7ms | Allocations: 39261)
+Completed 200 OK in 262ms (Views: 208.5ms | ActiveRecord: 0.0ms | Allocations: 42528)
+
+
+Started GET "/" for ::1 at 2022-12-08 02:57:05 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 9)
+  Rendered home/_header.html.erb (Duration: 0.2ms | Allocations: 140)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 2828)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 3169)
+
+
+Started GET "/student" for ::1 at 2022-12-08 02:57:16 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/student"):
+  
+Started GET "/student/s" for ::1 at 2022-12-08 02:57:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/student/s"):
+  
+Started GET "/students" for ::1 at 2022-12-08 02:57:21 +0200
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1310)
+  Rendered home/_header.html.erb (Duration: 0.2ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4007)
+Completed 200 OK in 26ms (Views: 15.4ms | ActiveRecord: 0.2ms | Allocations: 5784)
+
+
+Started GET "/students/new" for ::1 at 2022-12-08 02:57:34 +0200
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (Duration: 79.9ms | Allocations: 5487)
+  Rendered students/new.html.erb within layouts/application (Duration: 82.4ms | Allocations: 5806)
+  Rendered home/_header.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered layout layouts/application.html.erb (Duration: 93.9ms | Allocations: 8400)
+Completed 200 OK in 112ms (Views: 95.2ms | ActiveRecord: 0.5ms | Allocations: 14325)
+
+
+Started GET "/" for ::1 at 2022-12-08 02:59:56 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered home/_header.html.erb (Duration: 0.2ms | Allocations: 128)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 2614)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 2928)
+
+
+Started GET "/home/about" for ::1 at 2022-12-08 02:59:57 +0200
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 1.0ms | Allocations: 97)
+  Rendered home/_header.html.erb (Duration: 0.2ms | Allocations: 128)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 2733)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 3084)
+
+
+Started GET "/" for ::1 at 2022-12-08 02:59:58 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered home/_header.html.erb (Duration: 0.2ms | Allocations: 128)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 2639)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 2916)
+
+
